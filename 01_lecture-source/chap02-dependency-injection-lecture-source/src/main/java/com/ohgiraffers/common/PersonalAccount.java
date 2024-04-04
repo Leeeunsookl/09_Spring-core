@@ -1,5 +1,8 @@
 package com.ohgiraffers.common;
 
+import lombok.ToString;
+
+@ToString
 public class PersonalAccount implements Account{
 
     private final int bankCode; // 은행코드
@@ -22,6 +25,7 @@ public class PersonalAccount implements Account{
         String str = "";
 
         if(money >= 0) {
+            this.balance += money;
             str = money + "원이 입금되었습니다!!";
         } else {
             str = "금액을 잘못 입력하셨습니다!!";

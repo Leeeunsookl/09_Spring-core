@@ -15,7 +15,9 @@
         <constructor-arg name="name" value="조평훈"/>
         <constructor-arg name="phone" value="010-5518-2290"/>
         <constructor-arg name="email" value="pyunghun6909@gmail.com"/>
-        
+        <constructor-arg name="personalAccount">
+            <ref bean="account"/>
+        </constructor-arg>
     </bean>
 
 </beans>
