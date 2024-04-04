@@ -1,5 +1,7 @@
 package com.ohgiraffers.section03.javaconfig;
 
+import com.ohgiraffers.common.MemberDAO;
+import com.ohgiraffers.common.MemberDTO;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -23,6 +25,12 @@ public class Application {
         for(String beanName : beanNames) {
             System.out.println("beanName = " + beanName);
         }
+
+        MemberDAO memberDAO = context.getBean("dao", MemberDAO.class);
+
+        System.out.println(memberDAO.findMemberBySequence(1));
+        System.out.println(memberDAO.save(new MemberDTO(3, "user03", "pass03", "조평훈")));
+        System.out.println(memberDAO.findMemberBySequence(3));
     }
 
 }
