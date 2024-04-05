@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 *   동일한 타입의 클래스 중 한 개만 @Primary 어노테이션을 사용할 수 있다.
 *  */
 @Component
-@Primary
+//@Primary
 public class Koala implements Animal{
     @Override
     public void eat() {
