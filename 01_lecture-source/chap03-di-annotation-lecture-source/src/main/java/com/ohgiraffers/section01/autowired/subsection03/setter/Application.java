@@ -1,4 +1,5 @@
-package com.ohgiraffers.section01.autowired.subsection02.constructor;
+package com.ohgiraffers.section01.autowired.subsection03.setter;
+
 
 import com.ohgiraffers.section01.common.BookDTO;
 import org.springframework.context.ApplicationContext;
@@ -13,15 +14,14 @@ public class Application {
         ApplicationContext context =
                 new AnnotationConfigApplicationContext("com.ohgiraffers.section01");
 
-        BookService bookService = context.getBean("ServiceConstructor", BookService.class);
+        BookService bookService = context.getBean("ServiceSetter", BookService.class);
 
         List<BookDTO> books = bookService.selectAllBooks();
         for(BookDTO book : books) {
             System.out.println("book = " + book);
         }
 
-        System.out.println(bookService.searchBookBySequence(1));
-        
-    }
+        System.out.println(bookService.selectOneBookBySequence(1));
 
+    }
 }
