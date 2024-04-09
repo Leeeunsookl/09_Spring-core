@@ -17,13 +17,13 @@ public class MemberService {
 
     /* 전체 회원 조회 */
     public Map<Long, MemberDTO> selectMembers() {
-
+        System.out.println("selectMembers 메소드 실행");
         return memberDAO.selectMembers();
     }
 
     /* id 로 회원 조회 */
     public MemberDTO selectMember(Long id) {
-
+        System.out.println("selectMember 메소드 실행");
         return memberDAO.selectMember(id);
     }
 
